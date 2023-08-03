@@ -103,7 +103,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="This automation is meant for joining PDF documents.&#xA;&#xA;Automation Steps:&#xA;&#xA;1. Ask for files - this is done through an input dialog activity.&#xA;2. After the user has entered the files and selects &quot;Join Files&quot;, the automation moves on to the joining the documents.&#xA;3. After the files are joined a new file is created and opened. The file is saved in the same place, as the first selected file.&#xA;4. If the user does not enter any input, then a message box will be displayed asking for input. &#xA;" DisplayName="Flowchart - JoinPDF" sap:VirtualizedContainerService.HintSize="694,920" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+  <Flowchart sap2010:Annotation.AnnotationText="This automation is meant for joining PDF documents.&#xA;&#xA;Automation Steps:&#xA;&#xA;1. Ask for files - this is done through an input dialog activity.&#xA;2. After the user has entered the files and selects &quot;Join Files&quot;, the automation moves on to the joining the documents.&#xA;3. After the files are joined a new file is created and opened. The file is saved in the same place, as the first selected file.&#xA;4. If the user does not enter any input, then a message box will be displayed asking for input. &#xA;" DisplayName="Flowchart - JoinPDF" sap:VirtualizedContainerService.HintSize="694,911" sap2010:WorkflowViewState.IdRef="Flowchart_3">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="EndProcess" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new list(of String)]" Name="ListOfFiles" />
@@ -113,7 +113,7 @@
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="JoinFiles" />
       <Variable x:TypeArguments="s:String[]" Name="ArrayOfFiles" />
       <Variable x:TypeArguments="x:String" Name="NewFilePath" />
-      <Variable x:TypeArguments="x:Double" Name="RandomNumber" />
+      <Variable x:TypeArguments="x:String" Name="RandomNumber" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,17 +133,17 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">240,149.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,83</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">340,232.5 340,306.5</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,81</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">340,230.5 340,306.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Ask For Files" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_53">
+      <Sequence DisplayName="Ask For Files" sap:VirtualizedContainerService.HintSize="635,1167" sap2010:WorkflowViewState.IdRef="Sequence_53">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message - Asking User For Files" sap:VirtualizedContainerService.HintSize="686,143" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Asking user for files&quot;]">
+        <ui:LogMessage DisplayName="Log Message - Asking User For Files" sap:VirtualizedContainerService.HintSize="573,141" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Asking user for files&quot;]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -151,9 +151,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:LogMessage>
-        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[JoinFiles = false OR EndProcess = false]" DisplayName="While - Choose PDF's" sap:VirtualizedContainerService.HintSize="686,1619" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7" MaxIterations="5">
+        <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While - Choose PDF's" sap:VirtualizedContainerService.HintSize="573,716" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7" MaxIterations="5">
           <ui:InterruptibleWhile.Body>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="652,1482" sap2010:WorkflowViewState.IdRef="Sequence_48">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,580" sap2010:WorkflowViewState.IdRef="Sequence_48">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="ChosenButton" />
               </Sequence.Variables>
@@ -162,14 +162,14 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InputDialog Options="{x:Null}" DisplayName="Ask User For Input" sap:VirtualizedContainerService.HintSize="610,297" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="[&quot;Instructions: &quot; +vbLf +&#xA;&quot;Add File - Press Ok&quot; + vbLf +&#xA;&quot;Join File - Press Ok&quot; + vbLf + vbLf +&#xA;String.Format(&quot;Files added: {0}&quot;,Counter.ToString) + vbLf + String.Join( vbLf, ListOfFiles)]" OptionsString="[(&quot;Add File;Join Files&quot;)]" Title="Join PDF">
+              <ui:InputDialog Options="{x:Null}" DisplayName="Ask User For Input" sap:VirtualizedContainerService.HintSize="497,292" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="[String.Format(&quot;Files added: {0}&quot;,Counter.ToString) + vbLf + vbLf + String.Join( vbLf, ListOfFiles)]" OptionsString="[(&quot;Add File;Join Files&quot;)]" Title="Join PDF">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[UserInput]</OutArgument>
                 </ui:InputDialog.Result>
               </ui:InputDialog>
-              <Switch x:TypeArguments="x:String" DisplayName="Switch - Follow User Input" Expression="[UserInput]" sap:VirtualizedContainerService.HintSize="610,1057" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+              <Switch x:TypeArguments="x:String" DisplayName="Switch - Follow User Input" Expression="[UserInput]" sap:VirtualizedContainerService.HintSize="497,160" sap2010:WorkflowViewState.IdRef="Switch`1_5">
                 <Switch.Default>
-                  <Sequence sap2010:Annotation.AnnotationText="Ask if user wants to continue or end process." DisplayName="No Selection" sap:VirtualizedContainerService.HintSize="572,849" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                  <Sequence sap2010:Annotation.AnnotationText="Ask if user wants to continue or end process." DisplayName="No Selection" sap:VirtualizedContainerService.HintSize="572,842" sap2010:WorkflowViewState.IdRef="Sequence_51">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,23 +177,23 @@
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message - User Made No Selection" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;User made no selection&quot;]" />
-                    <ui:MessageBox sap2010:Annotation.AnnotationText="Prompt the user to make a selection or cancel (end the process)." AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Join PDF" ChosenButton="[ChosenButton]" DisplayName="Message Box - User Made No Selection" sap:VirtualizedContainerService.HintSize="510,130" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Please make a selection&quot; + &#xA;vbLf +&#xA;vblf +&#xA;&quot;Ok - Continue adding files&quot; + &#xA;vbLf +&#xA;&quot;Cancel - End process&quot;]">
+                    <ui:LogMessage DisplayName="Log Message - User Made No Selection" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;User made no selection&quot;]" />
+                    <ui:MessageBox sap2010:Annotation.AnnotationText="Prompt the user to make a selection or cancel (end the process)." AutoCloseAfter="00:00:00" Buttons="OkCancel" Caption="Join PDF" ChosenButton="[ChosenButton]" DisplayName="Message Box - User Made No Selection" sap:VirtualizedContainerService.HintSize="510,127" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Please make a selection&quot; + &#xA;vbLf +&#xA;vblf +&#xA;&quot;Ok - Continue adding files&quot; + &#xA;vbLf +&#xA;&quot;Cancel - End process&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:MessageBox>
-                    <If Condition="[ChosenButton = &quot;Cancel&quot;]" DisplayName="If - Ok or Cancel" sap:VirtualizedContainerService.HintSize="510,354" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[ChosenButton = &quot;Cancel&quot;]" DisplayName="If - Ok or Cancel" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_4">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_49">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Assign - EndProcess" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_42">
+                          <Assign DisplayName="Assign - EndProcess" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_42">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[EndProcess]</OutArgument>
                             </Assign.To>
@@ -215,22 +215,22 @@
                     </If>
                   </Sequence>
                 </Switch.Default>
-                <Sequence x:Key="Add File" DisplayName="Sequence - Add Selected File To List" sap:VirtualizedContainerService.HintSize="496,740" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                <Sequence x:Key="Add File" DisplayName="Sequence - Add Selected File To List" sap:VirtualizedContainerService.HintSize="496,733" sap2010:WorkflowViewState.IdRef="Sequence_52">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SelectFile DisplayName="Browse For PDF File" Filter="PDF|*.pdf" sap:VirtualizedContainerService.HintSize="434,140" sap2010:WorkflowViewState.IdRef="SelectFile_9" SelectedFile="[SelectedFile]" />
-                  <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[ListOfFiles]" DisplayName="Add File Path To List" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_6">
+                  <ui:SelectFile DisplayName="Browse For PDF File" Filter="PDF|*.pdf" sap:VirtualizedContainerService.HintSize="434,138" sap2010:WorkflowViewState.IdRef="SelectFile_9" SelectedFile="[SelectedFile]" />
+                  <uasc:AppendItemToCollection x:TypeArguments="x:String" Collection="[ListOfFiles]" DisplayName="Add File Path To List" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_6">
                     <uasc:AppendItemToCollection.Items>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                         <InArgument x:TypeArguments="x:String">[SelectedFile]</InArgument>
                       </scg:List>
                     </uasc:AppendItemToCollection.Items>
                   </uasc:AppendItemToCollection>
-                  <Assign DisplayName="Increase Counter By 1" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_43">
+                  <Assign DisplayName="Increase Counter By 1" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_43">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[Counter]</OutArgument>
                     </Assign.To>
@@ -238,7 +238,7 @@
                       <InArgument x:TypeArguments="x:Int32">[Counter + 1]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message - Adding File + Counter" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Adding file &quot;+ Counter.ToString]">
+                  <ui:LogMessage DisplayName="Log Message - Adding File + Counter" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Adding file &quot;+ Counter.ToString]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -247,7 +247,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
                 </Sequence>
-                <Assign x:Key="Join Files" sap2010:Annotation.AnnotationText="This exits the loop." DisplayName="Assign - JoinFiles" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_44">
+                <Assign x:Key="Join Files" sap2010:Annotation.AnnotationText="This exits the loop." DisplayName="Assign - JoinFiles" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="Assign_44">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[JoinFiles]</OutArgument>
                   </Assign.To>
@@ -263,6 +263,9 @@
               </Switch>
             </Sequence>
           </ui:InterruptibleWhile.Body>
+          <ui:InterruptibleWhile.Condition>
+            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="JoinFiles = false AND EndProcess = false" />
+          </ui:InterruptibleWhile.Condition>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -287,17 +290,17 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">60,478.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,83</av:Size>
+                  <av:Size x:Key="ShapeSize">200,81</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">260,520 410,520</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Join Files" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_54">
+              <Sequence DisplayName="Join Files" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_54">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Join Files Sequence Started" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Join Files Sequence Started&quot;]">
+                <ui:LogMessage DisplayName="Join Files Sequence Started" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Join Files Sequence Started&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -305,7 +308,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <Assign sap2010:Annotation.AnnotationText="This is done for the &quot;Join PDF Files&quot; activity to work." DisplayName="Assign - Convert ListOfFiles To An ArrayOfFiles" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_45">
+                <Assign sap2010:Annotation.AnnotationText="This is done for the &quot;Join PDF Files&quot; activity to work." DisplayName="Assign - Convert ListOfFiles To An ArrayOfFiles" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_45">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:String[]">[ArrayOfFiles]</OutArgument>
                   </Assign.To>
@@ -318,40 +321,57 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign sap2010:Annotation.AnnotationText="To make the new file name unique." DisplayName="Create Random Number" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_46">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Double">[RandomNumber]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Double">[Decimal.Parse(Math.Round((New Random).NextDouble()*1.5+36,3).ToString)]</InArgument>
-                  </Assign.Value>
+                <ui:MultipleAssign sap2010:Annotation.AnnotationText="Here we create a new file path for the joined PDF documents. &#xA;&#xA;The file is opened after creation, and will be saved in the same place as the first file the user selected." DisplayName="Multiple Assign - Create NewFilePath" sap:VirtualizedContainerService.HintSize="434,266" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                  <ui:MultipleAssign.AssignOperations>
+                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[RandomNumber]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[RandomNumber]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[RandomNumber.Substring(RandomNumber.Length-8)]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[RandomNumber]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[RandomNumber.Replace(":", "0")]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[NewFilePath]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">[ArrayOfFiles(0).Substring(0, ArrayOfFiles(0).Length-4) + RandomNumber + ".pdf"]</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                    </scg:List>
+                  </ui:MultipleAssign.AssignOperations>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </Assign>
-                <Assign sap2010:Annotation.AnnotationText="Here we create a new file path for the joined PDF documents. &#xA;&#xA;The file is opened after creation, and will be saved in the same place as the first file the user selected.&#xA;" DisplayName="Assign - Create New File Path" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="Assign_47">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[NewFilePath]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[ArrayOfFiles(0).Substring(0, ArrayOfFiles(0).Length-4) + RandomNumber.ToString + ".pdf"]</InArgument>
-                  </Assign.Value>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Assign>
-                <upap:JoinPDF sap2010:Annotation.AnnotationText="ArrayOfFiles --&gt; NewFilePath" DisplayName="Join Added PDF Files" FileList="[ArrayOfFiles]" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="JoinPDF_7" OutputFileName="[NewFilePath]">
+                </ui:MultipleAssign>
+                <upap:JoinPDF sap2010:Annotation.AnnotationText="ArrayOfFiles --&gt; NewFilePath" DisplayName="Join Added PDF Files" FileList="[ArrayOfFiles]" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="JoinPDF_7" OutputFileName="[NewFilePath]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </upap:JoinPDF>
-                <ui:LogMessage DisplayName="Log Message - File Created" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;File created: &quot; + NewFilePath]">
+                <ui:LogMessage DisplayName="Log Message - File Created" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;File created: &quot; + NewFilePath]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -360,7 +380,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
                 <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open The New PDF File" FileName="[NewFilePath]" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="StartProcess_7" />
-                <ui:LogMessage DisplayName="Join Files Sequence Ended" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_49" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Join Files Sequence Ended&quot;]">
+                <ui:LogMessage DisplayName="Join Files Sequence Ended" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_49" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Join Files Sequence Ended&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -374,10 +394,10 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">410,478.5</av:Point>
-                      <av:Size x:Key="ShapeSize">200,83</av:Size>
+                      <av:Size x:Key="ShapeSize">200,81</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="End Process" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                  <Sequence DisplayName="End Process" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_55">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
